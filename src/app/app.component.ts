@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';  // Importa RouterModule para las rutas
+import { RouterOutlet } from '@angular/router';  // Importa RouterOutlet para renderizar las rutas
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterModule,RouterOutlet],  // Importa RouterModule en el componente
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']  // Asegúrate de que el nombre sea styleUrls y no styleUrl
 })
 export class AppComponent {
-  title = 'nutriva';
+  title = 'nutriva';  // Título de la aplicación
 }

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="container-form">
+      <h2>Editar Perfil</h2>
+      <form (submit)="updateProfile()">
+        <div class="container-input" *ngFor="let field of userFields">
+          <ion-icon [name]="field.icon"></ion-icon>
+          
+          <!-- Etiqueta con el nombre del campo -->
+          <label>{{ field.label }}</label>
+  
+          <input 
+            *ngIf="field.key !== 'sexo'"
+            [type]="field.key === 'email' ? 'email' : field.key === 'telefono' ? 'tel' : 'text'"
+            [(ngModel)]="user[field.key]" 
+            [disabled]="!editMode"
+            name="{{ field.key }}"
+            required 
+          />
+  
+          <select *ngIf="field.key === 'sexo'" [(ngModel)]="user.sexo" name="sexo" [disabled]="!editMode">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+  
+        <!-- Botones -->
+        <button class="boton" type="button" (click)="toggleEditMode()">
+          {{ editMode ? 'Cancelar' : 'Editar Datos' }}
+        </button>
+        <button class="boton guardar" type="submit" *ngIf="editMode">Guardar Cambios</button>
+      </form>
+    </div>
+  </div>
+  

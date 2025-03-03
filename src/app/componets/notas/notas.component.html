@@ -1,0 +1,38 @@
+<div class="notas-personales">
+  <h2 *ngIf="!viendoRegistro">Notas Personales</h2>
+
+  <!-- Nueva Nota (oculta si se está viendo un registro) -->
+  <div *ngIf="!viendoRegistro">
+    <textarea [(ngModel)]="notaPersonal" placeholder="Escribe tus pensamientos, avances emocionales o cambios físicos..."></textarea>
+    <button (click)="guardarNota()" class="btn-guardar">Guardar Nota</button>
+
+    <div class="foto-container">
+      <input type="file" (change)="subirFoto($event)" accept="image/*">
+      <img *ngIf="imagen" [src]="imagen" alt="Imagen subida">
+    </div>
+  </div>
+
+  <!-- Ver registros -->
+  <button *ngIf="!viendoRegistro" (click)="verRegistros()" class="btn-ver">Ver Registros</button>
+
+  <!-- Lista de registros con paginación -->
+  <div *ngIf="mostrandoRegistros">
+    <h3>Registros Guardados</h3>
+    <ul>
+      <li *ngFor="let registro of registrosPaginados(); let i = index" (click)="verDetalleRegistro(i)" class="registro-item">
+        {{ registro.texto | slice:0:30 }}...
+      </li>
+    </ul>
+    <button (click)="cambiarPagina(-1)" [disabled]="paginaActual === 0">Anterior</button>
+    <button (click)="cambiarPagina(1)" [disabled]="paginaActual >= maxPaginas - 1">Siguiente</button>
+  </div>
+
+  <!-- Detalle del registro seleccionado -->
+  <div *ngIf="viendoRegistro" class="detalle-registro">
+    <h3>Registro Guardado</h3>
+    <p *ngIf="registroSeleccionado" class="texto-registro">{{ registroSeleccionado?.texto }}</p>
+
+    <img *ngIf="registroSeleccionado?.imagen" [src]="registroSeleccionado?.imagen" alt="Imagen del registro">
+    <button (click)="volverANuevaNota()" class="btn-volver">Volver a Crear Nota</button>
+  </div>
+</div>

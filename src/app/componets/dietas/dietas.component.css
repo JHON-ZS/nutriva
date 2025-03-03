@@ -1,0 +1,191 @@
+/* Cards Section */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    color: #589e85;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #111111;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Icono en la tarjeta */
+  .card h3::before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 2rem;
+    vertical-align: middle;
+  }
+  
+  .card:nth-child(1) h3::before {
+    content: '🍎'; /* Icono para Nutrición Personalizada */
+  }
+  
+  .card:nth-child(2) h3::before {
+    content: '🥗'; /* Icono para Recetas Saludables */
+  }
+  
+  .card:nth-child(3) h3::before {
+    content: '💪'; /* Icono para Ejercicios */
+  }
+  
+  .card:nth-child(4) h3::before {
+    content: '📅'; /* Icono para Calendario */
+  }
+  
+  .card:nth-child(5) h3::before {
+    content: '🧮'; /* Icono para Calculadora de Calorías */
+  }
+  
+  /* Botón de retroceso */
+/* Botón de retroceso */
+.back-button {
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    display: inline-block; /* Asegura que el botón se alinee correctamente */
+  }
+  
+  .back-button:hover {
+    background-color: #007acc;
+    transform: scale(1.05);
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(120deg, #76b39d, #97c5b4);
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  /* CTA Button */
+  .cta-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #76b39d;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta-button:hover {
+    background-color: #589e85;
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  .recipe-details {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+  }
+  .card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+.recipe-image {
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  max-width: 400px; /* Máximo tamaño permitido */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+  
+  .recipe-details h2 {
+    color: #589e85;
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+  
+  .recipe-details h3 {
+    font-size: 1.4rem;
+    margin-top: 15px;
+  }
+  
+  .recipe-details ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .recipe-details ul li {
+    font-size: 1.1rem;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .back-button {
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .back-button:hover {
+    background-color: #007acc;
+    transform: scale(1.05);
+  }
+  

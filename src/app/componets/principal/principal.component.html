@@ -1,0 +1,40 @@
+<header class="main-header">
+  <div class="container">
+    <div class="imagen">
+      <img src="/assets/nutriva.png" width="120" height="100" alt="Nutrivida logo" />
+      <h1>NUTRIVIDA</h1>
+    </div>
+  </div>
+</header>
+
+<!-- Barra de navegación (siempre visible) -->
+<nav class="nav-links">
+  <a [routerLink]="['/inicio/calendario']" class="nav-button">
+    <ion-icon name="calendar"></ion-icon> Calendario
+  </a>
+  <a [routerLink]="['/inicio/dietas']" class="nav-button">
+    <ion-icon name="restaurant"></ion-icon> Dietas
+  </a>
+  <a [routerLink]="['/inicio/notas']" class="nav-button">
+    <ion-icon name="document-text"></ion-icon> Notas Personales
+  </a>
+  <a [routerLink]="['/inicio/ejercicios']" class="nav-button">
+    <ion-icon name="barbell-outline"></ion-icon> Ejercicios
+  </a>
+  <a [routerLink]="['/inicio/calculadora']" class="nav-button">
+    <ion-icon name="calculator-outline"></ion-icon> Calculadora
+  </a>
+  <a [routerLink]="['/inicio/perfil']" class="nav-button">
+    <ion-icon name="person-outline"></ion-icon> Editar Perfil
+  </a>
+</nav>
+
+<!-- Contenedor principal para el contenido dinámico -->
+<main class="content">
+  <router-outlet></router-outlet> <!-- Aquí se cargan los componentes dinámicamente -->
+</main>
+
+<!-- Botón del chatbot (flotante o fijo) -->
+<button class="chatbot-button" (click)="openChatbot()">
+  <ion-icon name="chatbubbles"></ion-icon>
+</button>

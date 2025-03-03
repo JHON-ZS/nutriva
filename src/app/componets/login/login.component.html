@@ -1,0 +1,86 @@
+<div class="container" [class.toggle]="isToggled">
+  <div class="container-form">
+    <form class="sign-in" (submit)="login($event)">
+      <h2>Iniciar sesión</h2>
+      <div class="social-networks">
+        <ion-icon name="logo-tiktok"></ion-icon>
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </div>
+      <span>Use su correo y contraseña</span>
+      <div class="container-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="text" placeholder="Correo electrónico" [(ngModel)]="email" name="email" required />
+      </div>
+      <div class="container-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required />
+      </div>
+      <a href="#">¿Olvidaste tu contraseña?</a>
+      <button class="boton" type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+
+  <div class="container-form">
+    <form class="sign-up" (submit)="register($event)">
+      <h2>Registrarse</h2>
+      <div class="social-networks">
+        <ion-icon name="logo-tiktok"></ion-icon>
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </div>
+      <span>Use su correo electrónico para registrarse</span>
+      <div class="container-input">
+        <ion-icon name="person-outline"></ion-icon>
+        <input type="text" placeholder="Usuario" [(ngModel)]="username" name="username" required />
+      </div>
+      <div class="container-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <input type="text" placeholder="Correo electrónico" [(ngModel)]="email" name="email" required />
+      </div>
+      <div class="container-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password" required />
+      </div>
+      <div class="container-input">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <input type="number" placeholder="Edad" [(ngModel)]="edad" name="edad" required />
+      </div>
+      <div class="container-input">
+        <ion-icon name="body-outline"></ion-icon>
+        <input type="text" placeholder="Altura (cm)" [(ngModel)]="altura" name="altura" required />
+      </div>
+      <div class="container-input">
+        <ion-icon name="fitness-outline"></ion-icon>
+        <input type="number" placeholder="Peso (kg)" [(ngModel)]="peso" name="peso" required />
+      </div>
+      <div class="container-input">
+        <ion-icon name="male-female-outline"></ion-icon>
+        <select [(ngModel)]="sexo" name="sexo" required>
+          <option value="" disabled selected>Seleccione su sexo</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+      <div class="container-input">
+        <ion-icon name="call-outline"></ion-icon>
+        <input type="tel" placeholder="Teléfono" [(ngModel)]="telefono" name="telefono" required />
+      </div>
+      <button class="boton" type="submit">Registrarse</button>
+    </form>
+  </div>
+
+  <div class="container-welcome">
+    <div class="welcome-sign-up welcome">
+      <h3>Bienvenido!</h3>
+      <p>Ingrese sus datos personales para usar todas las funciones del sitio</p>
+      <button class="boton" (click)="toggleToSignUp()">Registrarse</button>
+    </div>
+    <div class="welcome-sign-in welcome">
+      <h3>Hola!</h3>
+      <p>Regístrese con sus datos personales para usar todas las funciones del sitio</p>
+      <button class="boton" (click)="toggleToSignIn()">Iniciar Sesión</button>
+    </div>
+  </div>
+</div>

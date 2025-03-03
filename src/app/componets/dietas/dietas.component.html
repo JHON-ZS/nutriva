@@ -1,0 +1,50 @@
+<main>
+  <!-- 🔹 Paso 1: Selección de Objetivo -->
+  <div *ngIf="currentStep === 1">
+    <section class="cards-container">
+      <div class="card" *ngFor="let option of objetivoOptions" (click)="selectObjective(option.value)">
+        <h3>{{ option.title }}</h3>
+        <p>{{ option.description }}</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- 🔹 Paso 2: Selección de Dieta -->
+  <div *ngIf="currentStep === 2">
+    <h2>Dietas Disponibles</h2>
+    <section class="cards-container">
+      <div class="card" *ngFor="let option of dietaOptions" (click)="selectDieta(option)">
+        <h3>{{ option.title }}</h3>
+        <p>{{ option.description }}</p>
+      </div>
+    </section>
+    <button class="back-button" (click)="goBack()">← Volver</button>
+  </div>
+
+  <!-- 🔹 Paso 3: Selección de Recetas -->
+  <div *ngIf="currentStep === 3">
+    <h2>Recetas Disponibles</h2>
+    <section class="cards-container">
+      <div class="card" *ngFor="let recipe of recipes" (click)="selectRecipe(recipe)">
+        <img [src]="recipe.image" alt="{{ recipe.name }}" />
+        <h3>{{ recipe.name }}</h3>
+      </div>
+    </section>
+    <button class="back-button" (click)="goBack()">← Volver</button>
+  </div>
+
+  <!-- 🔹 Paso 4: Ver detalles de la receta -->
+  <div *ngIf="currentStep === 4">
+    <div class="recipe-details">
+      <img [src]="selectedRecipe.image" class="recipe-image" alt="{{ selectedRecipe.name }}" />
+      <h2>{{ selectedRecipe.name }}</h2>
+
+      <h3>Ingredientes:</h3>
+      <ul>
+        <li *ngFor="let ingredient of selectedRecipe.ingredients">{{ ingredient }}</li>
+      </ul>
+
+      <button class="back-button" (click)="goBack()">← Volver</button>
+    </div>
+  </div>
+</main>

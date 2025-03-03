@@ -1,0 +1,106 @@
+/* Estilos generales */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f9f8eb /* Degradado elegante */
+}
+
+/* Tarjeta de formulario */
+.container-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.container-form:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+h2 {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* Contenedor de inputs */
+.container-input {
+  display: flex;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  transition: 0.3s;
+}
+
+.container-input:hover {
+  background: #e0e0e0;
+}
+
+/* Iconos */
+.container-input ion-icon {
+  color: #589e85;
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Etiquetas de los campos */
+.container-input label {
+  color: #333;
+  font-weight: bold;
+  margin-right: 10px;
+  width: 80px; /* Espacio fijo para alinear */
+  text-align: left;
+}
+
+/* Inputs y Selects */
+input, select {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font-size: 16px;
+  padding: 5px;
+}
+
+/* Inputs deshabilitados */
+input:disabled, select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Botones */
+.boton {
+  background: #589e85;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.boton:hover {
+  background: #76b39d;
+}
+
+/* Estilo para el botón de cancelar */
+.boton.cancelar {
+  background: #d9534f;
+}
+
+.boton.cancelar:hover {
+  background: #c9302c;
+}

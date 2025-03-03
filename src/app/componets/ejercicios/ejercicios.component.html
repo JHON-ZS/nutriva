@@ -1,0 +1,45 @@
+<main>
+  <!-- Paso 1: Selección de Categoría -->
+  <div *ngIf="currentStep === 1">
+    <section class="cards-container">
+      <div class="card" *ngFor="let category of categoriasEjercicio" (click)="selectCategory(category)">
+        <h3>{{ category.icon }} {{ category.title }}</h3>
+        <p>{{ category.description }}</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Paso 2: Lista de Ejercicios -->
+  <div *ngIf="currentStep === 2">
+    <h2>Ejercicios de {{ selectedCategory }}</h2>
+
+    <!-- Carga en progreso -->
+    <p *ngIf="isLoading">Cargando ejercicios...</p>
+
+    <!-- Mensaje de error -->
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+    <!-- Lista de ejercicios -->
+    <section class="cards-container" *ngIf="!isLoading && ejercicios.length > 0">
+      <div class="card" *ngFor="let ejercicio of ejercicios" (click)="selectEjercicio(ejercicio)">
+        <img [src]="ejercicio.gifUrl" alt="{{ ejercicio.name }}" />
+        <h3>{{ ejercicio.name }}</h3>
+      </div>
+    </section>
+
+    <!-- Mensaje cuando no hay ejercicios -->
+    <p *ngIf="!isLoading && ejercicios.length === 0">No se encontraron ejercicios para esta categoría.</p>
+  </div>
+
+  <!-- Paso 3: Detalles del Ejercicio -->
+  <div *ngIf="currentStep === 3">
+    <section class="exercise-details">
+      <h2>{{ selectedEjercicio.name }}</h2>
+      <img [src]="selectedEjercicio.gifUrl" alt="{{ selectedEjercicio.name }}" />
+      <p>{{ selectedEjercicio.description || 'No hay descripción disponible.' }}</p>
+    </section>
+  </div>
+
+  <!-- Botón de Volver -->
+  <button *ngIf="currentStep > 1" (click)="goBack()" class="back-button">← Volver</button>
+</main>

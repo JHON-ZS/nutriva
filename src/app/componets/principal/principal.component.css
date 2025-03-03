@@ -1,0 +1,126 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f9f8eb;
+    color: #111111;
+    line-height: 1.6;
+  }
+  
+  /* Header Styles */
+  .main-header {
+    background-color: #76b39d;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #589e85;
+  }
+  
+  .main-header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .imagen {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .imagen img {
+    border-radius: 10px;
+  }
+  
+  .main-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* Navigation Styles */
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    background-color: #76b39d;
+    padding: 10px 0;
+  }
+  
+  .nav-button {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #589e85;
+  }
+  
+  .nav-button:hover {
+    background-color: #ffffff;
+    color: #76b39d;
+  }
+  
+  ion-icon {
+    margin-right: 5px;
+  }
+  
+  /* Main Content Styles */
+  .content {
+    background-color: #f0f0f0;
+    margin: 20px;
+    min-height: 300px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .content h2 {
+    color: #76b39d;
+    min-height: 100vh; /* Asegura que el contenedor ocupe todo el alto de la pantalla */
+    padding: 20px;
+    margin-top: 20px; /* Si es necesario, ajusta los márgenes para evitar solapamiento con el header */
+    border-radius: 10px;
+  }
+  
+  /* Chatbot Button */
+  .chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #008cff;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .chatbot-button:hover {
+    background-color: #0099ff;
+  }
+  /* Asegúrate de que el contenedor de contenido tenga al menos el alto disponible */
+  main.content {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+/* Verifica que el router-outlet no tenga márgenes o padding que lo hagan más pequeño */
+router-outlet {
+  display: block;
+  width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+  height: auto; /* Deja que ocupe el espacio disponible */
+}
